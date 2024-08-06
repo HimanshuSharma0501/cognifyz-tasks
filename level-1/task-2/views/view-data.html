@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stored Data</title>
+  </head>
+  <body>
+    <h1>Stored Data</h1>
+    <div id="data">
+      <p>Loading stored data...</p>
+    </div>
+    <a href="/">Go back to form</a>
+
+    <script>
+      fetch("/get-stored-data")
+        .then((response) => response.json())
+        .then((data) => {
+          if (data) {
+            document.getElementById("data").innerHTML = `
+                        <p>Username: ${data.username}</p>
+                        <p>Email: ${data.email}</p>
+                    `;
+          } else {
+            document.getElementById("data").innerHTML =
+              "<p>No data stored in session.</p>";
+          }
+        });
+    </script>
+  </body>
+</html>

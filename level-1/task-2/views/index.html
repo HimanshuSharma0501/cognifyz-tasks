@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation Example</title>
+  </head>
+  <body
+    style="
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div>
+      <h1>Register</h1>
+      <form
+        id="myForm"
+        method="post"
+        action="/submit-form"
+        style="padding: 20px; border: 1px solid #ccc; max-width: 400px"
+      >
+        <label for="username" style="display: block; margin-bottom: 5px"
+          >Username:</label
+        >
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          style="
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+          "
+        />
+
+        <label for="email" style="display: block; margin-bottom: 5px"
+          >Email:</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          style="
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+          "
+        />
+
+        <label for="password" style="display: block; margin-bottom: 5px"
+          >Password:</label
+        >
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          style="
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+          "
+        />
+
+        <label for="confirm_password" style="display: block; margin-bottom: 5px"
+          >Confirm Password:</label
+        >
+        <input
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+          required
+          style="
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+          "
+        />
+
+        <button
+          type="submit"
+          style="
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+          "
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          var password = document.getElementById("password").value;
+          var confirmPassword =
+            document.getElementById("confirm_password").value;
+
+          if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>
