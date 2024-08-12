@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Web Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/" id="home-link">Home</a></li>
+          <li><a href="/about" id="about-link">About</a></li>
+          <li><a href="/contact" id="contact-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="content">
+      <h1>Welcome to My Web Project</h1>
+      <p>This is the home page.</p>
+      <form id="register-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <p id="password-feedback"></p>
+
+        <label for="user-type">User Type:</label>
+        <select id="user-type" name="user-type">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <div id="additional-info" style="display: none">
+          <label for="admin-code">Admin Code:</label>
+          <input type="text" id="admin-code" name="admin-code" />
+        </div>
+
+        <button type="submit">Register</button>
+      </form>
+    </main>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
